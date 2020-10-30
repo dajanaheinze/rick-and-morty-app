@@ -12,14 +12,15 @@ export default function Character ({name, imageUrl}){
 const Wrapper = styled.div`
     background-color: white;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr;
+    gap: 10px;
     padding: 10px 35px 10px 15px;
     border-bottom: 1px solid #e3e3e3;
     place-items: center;
 
 `
 const CharImage = styled.img`
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     border: 1px solid #42628C;
 `

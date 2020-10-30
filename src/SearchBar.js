@@ -12,31 +12,34 @@ export default function SearchBar({onSearch}){
 
     return <FormStyled onSubmit={handleSubmit}>
             <label>
-            Search Character:
-            <input name="searchedCharacter" type="text" placeholder="..."/>
+            <InputStyled name="searchedCharacter" type="text" placeholder="search Character"/>
             </label>
             <Button>Search</Button>
         </FormStyled>
 }
 
 const FormStyled = styled.form`
-  display: grid;
-  gap: 4px;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  margin-bottom: 20px;
-  justify-items: stretch;
-  input {
-    font-size: 1em;
-    width: 100%;
-    padding: 4px 0;
-  }
+  padding: 20px;
+ 
+
+`
+
+const InputStyled = styled.input`
+  height: 60px;
+  width: 100%;
+  padding: 4px 0;
+  text-align: center;
 `
 
 const Button = styled.button`
   padding: 10px 20px;
-  background: plum;
-  color: darkorchid;
-  font-size: 1.2em;
+  background-color: #09182b;
+  color: white;
+  font-size: 1em;
   border: none;
-  border-radius: 6px;
+  border-radius: 3px;
+  width: 100%;
 `
