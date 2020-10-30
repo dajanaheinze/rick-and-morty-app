@@ -18,6 +18,4 @@ export default createGlobalStyle`
         background-size: cover;
     }
 
-
-
 `
