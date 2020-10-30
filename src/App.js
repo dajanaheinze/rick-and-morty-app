@@ -3,7 +3,6 @@ import SearchBar from "./SearchBar";
 import getCharacter from './services/getCharacter';
 import Character from './Character';
 import styled from 'styled-components/macro';
-import finger from './assets/finger2.png';
 import fingerGif from './assets/tenor.gif';
 
 function App() {

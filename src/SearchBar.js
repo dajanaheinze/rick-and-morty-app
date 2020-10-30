@@ -23,6 +23,7 @@ const FormStyled = styled.form`
   bottom: 0;
   width: 100%;
   padding: 20px;
+  border-radius: 5px;
  
 
 `
@@ -32,6 +33,8 @@ const InputStyled = styled.input`
   width: 100%;
   padding: 4px 0;
   text-align: center;
+  border-radius: 5px;
+  font-size: 0.7em;
 `
 
 const Button = styled.button`
@@ -41,5 +44,7 @@ const Button = styled.button`
   font-size: 1em;
   border: none;
   border-radius: 3px;
+  height: 60px;
   width: 100%;
+  border-radius: 5px;
 `

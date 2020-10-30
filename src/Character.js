@@ -10,17 +10,28 @@ export default function Character ({name, imageUrl}){
 }
 
 const Wrapper = styled.div`
-    background-color: white;
+    background-color: #678492;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 20px;
     padding: 10px 35px 10px 15px;
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid #233644;
     place-items: center;
+    margin: 20px 60px 20px 60px;
+    font-size: 16px;
+    opacity: 0.95;
+    border-radius: 5px;
+    color: #09182b;
+    text-align: center;
+    box-shadow:  20px 20px 60px #576f7c, 
+                 -20px -20px 60px #7596a8;
+
 
 `
 const CharImage = styled.img`
-    width: 80px;
-    height: 80px;
-    border: 1px solid #42628C;
+    width: 90px;
+    height: 90px;
+    border: 1px solid #233644;
+    border-radius: 5px;
+
 `
