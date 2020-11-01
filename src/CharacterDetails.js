@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Character ({name, imageUrl, onClick}){
-    return <Wrapper onClick={onClick}>
-        <CharImage src={imageUrl} />
-        <span>{name}</span>
-    </Wrapper>
+export default function CharacterDetails ({characterDetails}){
+    return <Wrapper>
+                <h2>Character Details for {characterDetails.name}</h2>
+                <CharImage src={characterDetails.image} />
+                <span>Species: {characterDetails.species}</span>
+                <span>Gender: {characterDetails.gender}</span>
+            </Wrapper>
 }
 
 const Wrapper = styled.div`
@@ -25,12 +27,13 @@ const Wrapper = styled.div`
     box-shadow:  20px 20px 60px #576f7c, 
                  -20px -20px 60px #7596a8;
 
-
+    h2{
+        font-size: 20px;
+    }
 `
 const CharImage = styled.img`
     width: 90px;
     height: 90px;
     border: 1px solid #233644;
     border-radius: 5px;
-
 `
