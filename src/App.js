@@ -1,31 +1,43 @@
 import {useState} from "react";
 import SearchBar from "./SearchBar";
-import getCharacter from './services/getCharacter';
+import getCharactersBySearch from './services/getCharactersBySearch';
+import getCharacterDetails from './services/getCharacterDetails';
 import Character from './Character';
+import CharacterDetails from './CharacterDetails';
 import styled from 'styled-components/macro';
 import fingerGif from './assets/tenor.gif';
 
+export default App;
+
 function App() {
   const [characters, setCharacters] = useState([])
+  const [characterDetails, setCharacterDetails] = useState([])
+  const [isChracterDetailsHidden, setIsChracterDetailsHidden] = useState()
+  const [isChracterHidden, setIsChracterHidden] = useState()
   
-  function showCharacter(searchedCharacter) {
-    getCharacter(searchedCharacter)
+  function showSearchedCharacters(searchedCharacter) {
+    getCharactersBySearch(searchedCharacter)
       .then(data => setCharacters(data.results ? data.results : [{ name : `Sorry, there is no character called "${searchedCharacter}".`, id: null, image: fingerGif }]))
+  }
+
+  function showCharacterDetails(characterId) {
+    getCharacterDetails(characterId)
+      .then(data => setCharacterDetails(data))
+      setIsChracterDetailsHidden(false)
+      setIsChracterHidden(true)
 
   }
   
-  console.log(characters)
   return (
     <AppStyled className="App">
-      {characters && characters.map(({id, name, image}) => {
-        return <Character key={id} name={name} imageUrl={image} />
-      } 
       
-    )}
+      <CharacterDetails characterDetails={characterDetails} hidden={isChracterDetailsHidden}/>
       
-      <SearchBar onSearch={showCharacter} />
-      
-            
+      {characters.map(({id, name, image}) => {
+        return <Character key={id} name={name} imageUrl={image} onClick={() => showCharacterDetails(id)} hidden={isChracterHidden}/>
+      })}
+
+      <SearchBar onSearch={showSearchedCharacters} /> 
     </AppStyled>
   );
 }
@@ -39,9 +51,6 @@ height: 100vh;
   top: 0;
   width: 100%;
   height: 100%;
-
- 
 `
 
 
-export default App;
