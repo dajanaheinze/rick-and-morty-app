@@ -12,6 +12,8 @@ export default App;
 function App() {
   const [characters, setCharacters] = useState([])
   const [characterDetails, setCharacterDetails] = useState([])
+  const [isChracterDetailsHidden, setIsChracterDetailsHidden] = useState()
+  const [isChracterHidden, setIsChracterHidden] = useState()
   
   function showSearchedCharacters(searchedCharacter) {
     getCharactersBySearch(searchedCharacter)
@@ -21,14 +23,18 @@ function App() {
   function showCharacterDetails(characterId) {
     getCharacterDetails(characterId)
       .then(data => setCharacterDetails(data))
+      setIsChracterDetailsHidden(false)
+      setIsChracterHidden(true)
+
   }
+  
   return (
     <AppStyled className="App">
       
-      <CharacterDetails characterDetails={characterDetails}/>
+      <CharacterDetails characterDetails={characterDetails} hidden={isChracterDetailsHidden}/>
       
       {characters.map(({id, name, image}) => {
-        return <Character key={id} name={name} imageUrl={image} onClick={() => showCharacterDetails(id)} />
+        return <Character key={id} name={name} imageUrl={image} onClick={() => showCharacterDetails(id)} hidden={isChracterHidden}/>
       })}
 
       <SearchBar onSearch={showSearchedCharacters} /> 

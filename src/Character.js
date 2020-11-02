@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Character ({name, imageUrl, onClick}){
-    return <Wrapper onClick={onClick}>
+export default function Character ({name, imageUrl, onClick, hidden=false}){
+    return <Wrapper hidden={hidden} onClick={onClick}>
         <CharImage src={imageUrl} />
         <span>{name}</span>
     </Wrapper>
@@ -10,7 +10,7 @@ export default function Character ({name, imageUrl, onClick}){
 
 const Wrapper = styled.div`
     background-color: #678492;
-    display: grid;
+    display:  ${(props) => (props.hidden ? 'none' : 'grid')};
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 10px 35px 10px 15px;
@@ -22,6 +22,7 @@ const Wrapper = styled.div`
     border-radius: 5px;
     color: #09182b;
     text-align: center;
+    text-transform: uppercase;
     box-shadow:  20px 20px 60px #576f7c, 
                  -20px -20px 60px #7596a8;
 

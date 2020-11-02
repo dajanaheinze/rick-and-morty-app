@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function CharacterDetails ({characterDetails}){
-    return <Wrapper>
-                <h2>Character Details for {characterDetails.name}</h2>
+export default function CharacterDetails ({characterDetails, hidden=true}){
+    return <Wrapper hidden={hidden}>
+                <h2>{characterDetails.name}</h2>
                 <CharImage src={characterDetails.image} />
                 <span>Species: {characterDetails.species}</span>
                 <span>Gender: {characterDetails.gender}</span>
@@ -12,7 +12,7 @@ export default function CharacterDetails ({characterDetails}){
 
 const Wrapper = styled.div`
     background-color: #678492;
-    display: grid;
+    display: ${(props) => (props.hidden ? 'none' : 'grid')};
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 10px 35px 10px 15px;
@@ -24,6 +24,7 @@ const Wrapper = styled.div`
     border-radius: 5px;
     color: #09182b;
     text-align: center;
+    text-transform: uppercase;
     box-shadow:  20px 20px 60px #576f7c, 
                  -20px -20px 60px #7596a8;
 
