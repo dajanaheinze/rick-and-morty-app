@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from "react";
 import styled from 'styled-components/macro'
-import { useParams, } from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
 import getCharacterDetails from './services/getCharacterDetails';
     
 
@@ -15,12 +15,14 @@ export default function CharacterDetails (){
         .then(data => setCharacterDetails(data))
       }, [characterId])
       
-    return  <Wrapper>
-                <h2>{characterDetails.name}</h2>
-                <CharImage src={characterDetails.image} />
-                <span>Species: {characterDetails.species}</span>
-                <span>Gender: {characterDetails.gender}</span>    
-            </Wrapper>
+    return <Wrapper>
+            <h2>{characterDetails.name}</h2>
+            <CharImage src={characterDetails.image} />
+            <span>Species: {characterDetails.species}</span>
+            <span>Gender: {characterDetails.gender}</span> 
+            <Link to="/"><button>Back</button></Link>   
+        </Wrapper>
+               
 }
 
 
@@ -45,6 +47,15 @@ const Wrapper = styled.div`
     h2{
         font-size: 20px;
     }
+
+    button {
+        border: none;
+        border-radius: 5px;
+        background-color: #D9D3B4;
+        padding: 5px 20px;
+        font-size: inherit;
+    }
+    
 `
 const CharImage = styled.img`
     width: 90px;

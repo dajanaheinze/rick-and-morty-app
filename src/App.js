@@ -5,7 +5,7 @@ import Character from './Character';
 import CharacterDetails from './CharacterDetails';
 import styled from 'styled-components/macro';
 import fingerGif from './assets/tenor.gif';
-import { Route, Switch, NavLink } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 
 export default App;
 
@@ -26,9 +26,9 @@ function App() {
         </Route>
         <Route path="/">
           {characters.map(({id, name, image}) => {
-            return <NavLink to={`/CharacterDetails/${id}`}>
+            return <Link to={`/CharacterDetails/${id}`}>
                 <Character key={id} name={name} imageUrl={image}/>
-              </NavLink>
+              </Link>
           })}
         </Route>
       </Switch>
