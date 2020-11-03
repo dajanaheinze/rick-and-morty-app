@@ -14,7 +14,7 @@ export default function SearchBar({onSearch}){
             <label>
             <i class="fa fa-instagram icon"></i> 
 
-            <InputStyled name="searchedCharacter" type="text" placeholder="Name of character..."/>
+            <InputStyled name="searchedCharacter" type="search" placeholder="Name of character..."/>
             </label>
             <Button>Search</Button>
         </FormStyled>
@@ -39,10 +39,31 @@ const InputStyled = styled.input`
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-size: 16px;
-  font-family: Calibri;
+  font-family: Fantasy;
+  z-index: 999;
 `
 
 const Button = styled.button`
+    letter-spacing: 3px;
+    background-color: #395161;
+    padding: 10px 20px;
+    border-top: 0px;
+    border: 1px solid #395161;
+    font-size: 16px;
+    opacity: 0.95;
+    height: 60px;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 20px 20px 60px #576f7c, -20px -20px 60px #7596a8;
+    font-family: Fantasy;
+`
+
+/*
+
   padding: 10px 20px;
   background-color: #39434e;
   color: white;
@@ -56,4 +77,5 @@ const Button = styled.button`
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: Calibri;
-`
+
+*/

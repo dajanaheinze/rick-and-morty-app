@@ -14,7 +14,7 @@ export default createGlobalStyle`
         font-size: 112.5%;
         background-image: url(${help});
         margin: 0;
-        font-family: Calibri;
+        font-family: Fantasy;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -23,5 +23,19 @@ export default createGlobalStyle`
     button:focus, textarea:focus, input:focus{
         outline: none;
     }
-
+    a:link {
+        text-decoration: none;
+      }
+      
+      a:visited {
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+      
+      a:active {
+        text-decoration: underline;
+      }
 `
