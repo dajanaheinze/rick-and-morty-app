@@ -12,7 +12,7 @@ export default function SearchBar({onSearch}){
 
     return <FormStyled onSubmit={handleSubmit}>
             <label>
-            <InputStyled name="searchedCharacter" type="text" placeholder="search Character"/>
+            <InputStyled name="searchedCharacter" type="text" placeholder="Name of character..."/>
             </label>
             <Button>Search</Button>
         </FormStyled>
