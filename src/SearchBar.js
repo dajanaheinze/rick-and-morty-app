@@ -39,7 +39,7 @@ const InputStyled = styled.input`
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-size: 16px;
-  font-family: Fantasy;
+  font-family: monospace;
   z-index: 999;
 `
 
@@ -58,8 +58,7 @@ const Button = styled.button`
     color: white;
     text-align: center;
     text-transform: uppercase;
-    box-shadow: 20px 20px 60px #576f7c, -20px -20px 60px #7596a8;
-    font-family: Fantasy;
+    font-family: monospace;
 `
 
 /*

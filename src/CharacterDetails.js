@@ -55,9 +55,9 @@ const Wrapper = styled.div`
         border: none;
         border-radius: 5px;
         background-color: #395161;
-        padding: 15px 20px 10px 20px;
+        padding: 10px 20px 10px 20px;
         font-size: inherit;
-        font-family: Fantasy;
+        font-family: monospace;
         color: white;
         opacity: 0.9;
     }

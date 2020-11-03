@@ -14,7 +14,7 @@ export default createGlobalStyle`
         font-size: 112.5%;
         background-image: url(${help});
         margin: 0;
-        font-family: Fantasy;
+        font-family: monospace;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
