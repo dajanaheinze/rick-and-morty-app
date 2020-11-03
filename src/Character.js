@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     display:  ${(props) => (props.hidden ? 'none' : 'grid')};
     grid-template-columns: 1fr ;
     gap: 20px;
-    padding: 25px 35px 10px 15px;
+    padding: 25px 35px 20px 15px;
     border-bottom: 1px solid #233644;
     place-items: center;
     margin: 20px 40px 20px 40px;
@@ -32,5 +32,4 @@ const CharImage = styled.img`
     height: 90px;
     border: 1px solid #233644;
     border-radius: 5px;
-
 `
