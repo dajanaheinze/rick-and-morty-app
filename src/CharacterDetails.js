@@ -1,14 +1,28 @@
 import React from 'react'
+import {useState, useEffect} from "react";
 import styled from 'styled-components/macro'
+import { useParams, } from "react-router-dom";
+import getCharacterDetails from './services/getCharacterDetails';
+    
 
-export default function CharacterDetails ({characterDetails, hidden=true}){
-    return <Wrapper hidden={hidden}>
+export default function CharacterDetails (){
+    
+    const [characterDetails, setCharacterDetails] = useState([])
+    let { characterId } = useParams();
+
+    useEffect(() => {
+        getCharacterDetails(characterId)
+        .then(data => setCharacterDetails(data))
+      }, [characterId])
+      
+    return  <Wrapper>
                 <h2>{characterDetails.name}</h2>
                 <CharImage src={characterDetails.image} />
                 <span>Species: {characterDetails.species}</span>
-                <span>Gender: {characterDetails.gender}</span>
+                <span>Gender: {characterDetails.gender}</span>    
             </Wrapper>
 }
+
 
 const Wrapper = styled.div`
     background-color: #678492;
@@ -38,3 +52,4 @@ const CharImage = styled.img`
     border: 1px solid #233644;
     border-radius: 5px;
 `
+
