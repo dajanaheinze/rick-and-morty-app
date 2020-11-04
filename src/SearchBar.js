@@ -1,12 +1,16 @@
 import styled from 'styled-components/macro'
+import { useHistory } from "react-router-dom";
 
 export default function SearchBar({onSearch}){
+  const history = useHistory();
 
     function handleSubmit(event) {
         event.preventDefault()
         const searchedCharacter = event.target.searchedCharacter.value;
         onSearch(searchedCharacter)
         event.target.reset()
+        history.push("/");
+
         //event.target.focus()
       }
 
@@ -19,6 +23,29 @@ export default function SearchBar({onSearch}){
             <Button>Search</Button>
         </FormStyled>
 }
+
+
+/*
+
+
+import { useHistory } from "react-router-dom";
+
+function HomeButton() {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/home");
+  }
+
+  return (
+    <button type="button" onClick={handleClick}>
+      Go home
+    </button>
+  );
+}
+
+*/
+
 
 const FormStyled = styled.form`
   position: fixed;
