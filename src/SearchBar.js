@@ -68,20 +68,3 @@ const Button = styled.button`
     font-family: monospace;
 `
 
-/*
-
-  padding: 10px 20px;
-  background-color: #39434e;
-  color: white;
-  font-size: 1em;
-  border: none;
-  border-radius: 3px;
-  height: 60px;
-  width: 100%;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: Calibri;
-
-*/
