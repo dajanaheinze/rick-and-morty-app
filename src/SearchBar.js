@@ -12,7 +12,9 @@ export default function SearchBar({onSearch}){
 
     return <FormStyled onSubmit={handleSubmit}>
             <label>
-            <InputStyled name="searchedCharacter" type="text" placeholder="search Character"/>
+            <i class="fa fa-instagram icon"></i> 
+
+            <InputStyled name="searchedCharacter" type="search" placeholder="Name of character..."/>
             </label>
             <Button>Search</Button>
         </FormStyled>
@@ -24,7 +26,7 @@ const FormStyled = styled.form`
   width: 100%;
   padding: 20px;
   border-radius: 5px;
- 
+  font-size: 16px;
 
 `
 
@@ -33,18 +35,46 @@ const InputStyled = styled.input`
   width: 100%;
   padding: 4px 0;
   text-align: center;
-  border-radius: 5px;
-  font-size: 0.7em;
+  border: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 16px;
+  font-family: monospace;
+  z-index: 999;
 `
 
 const Button = styled.button`
+    letter-spacing: 3px;
+    background-color: #395161;
+    padding: 10px 20px;
+    border-top: 0px;
+    border: 1px solid #395161;
+    font-size: 16px;
+    opacity: 0.95;
+    height: 60px;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: monospace;
+`
+
+/*
+
   padding: 10px 20px;
-  background-color: #09182b;
+  background-color: #39434e;
   color: white;
   font-size: 1em;
   border: none;
   border-radius: 3px;
   height: 60px;
   width: 100%;
-  border-radius: 5px;
-`
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: Calibri;
+
+*/
